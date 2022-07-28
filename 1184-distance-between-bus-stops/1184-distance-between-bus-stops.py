@@ -5,7 +5,7 @@ class Solution:
         while start != destination:
             cur += distance[start]
             start = (start+1)%len(distance)
-            print(cur)
-            print(start)
+            #print(cur)
+            #print(start)
         return min(cur, total-cur)
         
