@@ -1,6 +1,6 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        initial = {}
+        """initial = {}
         for element in nums:
             if element not in initial: #this one is useful hashmap function
                 initial[element] = 1
@@ -17,5 +17,12 @@ class Solution:
             #element = element[0]
         #print(extract)
         #print(extract)
-        return initial_list
+        return initial_list"""
+        dic = {}
+        for i in nums:
+            dic[i] = dic.get(i,0)+1
+        #print(dic)
+        ans = sorted(dic, key=dic.get, reverse = True)
+        #print(ans)
+        return ans[:k]
         
