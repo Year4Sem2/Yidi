@@ -17,10 +17,12 @@ class Solution:
                 res.append(curStr)
                 print("if len(curStr) == len(digits), res: {}".format(res))
                 return
+            print("value of i: {}".format(i))
             for c in digitToChar[digits[i]]:
+                print("c: {}".format(c))
                 print("backtrack({},{})".format(i+1, curStr + c))
                 backtrack(i + 1, curStr + c)
-                print("backtrack({},{}), getting out".format(i,curStr))
+                print("backtrack({},{}), getting out, c: {}".format(i,curStr,c))
 
         if digits:
             backtrack(0, "")
