@@ -15,9 +15,12 @@ class Solution:
         def backtrack(i, curStr):
             if len(curStr) == len(digits):
                 res.append(curStr)
+                print("if len(curStr) == len(digits), res: {}".format(res))
                 return
             for c in digitToChar[digits[i]]:
+                print("backtrack({},{})".format(i+1, curStr + c))
                 backtrack(i + 1, curStr + c)
+                print("backtrack({},{}), getting out".format(i,curStr))
 
         if digits:
             backtrack(0, "")
